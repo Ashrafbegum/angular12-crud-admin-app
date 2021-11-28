@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LayoutModule } from './layout/layout.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LayoutModule } from './layout/layout.module';
     AppRoutingModule,
     MatSidenavModule,
     LayoutModule,
+    UsersModule,
     BrowserAnimationsModule
   ],
   providers: [],
