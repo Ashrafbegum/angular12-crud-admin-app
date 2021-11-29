@@ -20,4 +20,8 @@ export class UserService {
   addUser(userObj: any){
      return this.http.post(this.baseUrl + "users", userObj);
   }
+
+  deleteUser(id: string) {
+    return this.http.delete(this.baseUrl + "users/" + id);
+  }
 }
