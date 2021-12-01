@@ -7,6 +7,12 @@
                     <mat-label>Name</mat-label>
                     <input matInput placeholder="Enter name here" formControlName="name">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('required')">
+                        Name is reuired
+                    </mat-error>
+                    <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('minlength')">
+                        Name should be at least three characters long
+                    </mat-error>
                 </mat-form-field>
             </p>
 
@@ -16,6 +22,12 @@
                     <input matInput placeholder="Enter email here" formControlName="email">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>abc@xyz.com</mat-hint>
+                    <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('required')">
+                        Email is reuired
+                    </mat-error>
+                    <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('email')">
+                        Email is invalid
+                    </mat-error>
                 </mat-form-field>
             </p>
 
@@ -24,6 +36,12 @@
                     <mat-label>Phone</mat-label>
                     <input matInput placeholder="Enter phone here" formControlName="phone">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-error *ngIf="addUserForm.controls['phone'].errors && addUserForm.controls['phone'].hasError('required')">
+                        Phone is reuired
+                    </mat-error>
+                    <mat-error *ngIf="addUserForm.controls['phone'].errors && addUserForm.controls['phone'].hasError('maxlength')">
+                        Phone can be maximum 10 digits long
+                    </mat-error>
                 </mat-form-field>
             </p>
 
