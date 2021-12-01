@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
   userDetails: any;
   editUserForm: FormGroup = new FormGroup({});
   dataLoaded: boolean = false;
-  constructor(private activatedRoue: ActivatedRoute, private _userService: UserService, private formBuilder: FormBuilder, private _snackBar: MatSnackBar) { }
+  constructor(private activatedRoue: ActivatedRoute, private _userService: UserService, private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.dataLoaded = false;
@@ -46,6 +46,7 @@ export class EditUserComponent implements OnInit {
   updateUser(){
     console.log(this.editUserForm.value);
     this._userService.updateUser(this.id, this.editUserForm.value).subscribe(data => {
+      this.router.navigate(['users/list']);
       this._snackBar.open("User updated successfully");
     }, err => {
       this._snackBar.open("Unable to update user:" + err);
