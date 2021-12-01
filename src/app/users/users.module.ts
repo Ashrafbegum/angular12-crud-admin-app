@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY} from '@angular
     MatInputModule,
     MatIconModule,  
     MatButtonModule,
-    MatSnackBarModule 
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY, useValue: {duration: 500}}
