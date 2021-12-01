@@ -28,7 +28,7 @@
             </p>
 
             <div class="example-button-row">
-            <button mat-raised-button color="primary">Add User</button>
+            <button mat-raised-button color="primary" [disabled]="!addUserForm.valid">Add User</button>
             </div>
         </form>
     </mat-card-content>
